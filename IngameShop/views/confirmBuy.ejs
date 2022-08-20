@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Confirm Your Order</title>
+  </head>
+  <body>
+    <main>
+        <h1>Confirmation</h1>
+        <form method="post" action="/confirm/<%= result.id %> ">
+            <div>
+                <label>Item Name: </label>
+                <h5><%= result.Item.name  %> </h5>
+            </div>
+            <div>
+                <label>Item Price: </label>
+                <h5><%= result.Item.price %></h5>
+            </div>
+            <div>
+                <label>Total Price: </label>
+                <h5><%= result.total %></h5>
+            </div>
+            <div>
+                <input type="submit" value="confirm">
+            </div>
+        </form>
+        <a href="/transactionCancel/<%= result.UserId %> /<%= result.id %> "><button>Cancel</button></a>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
